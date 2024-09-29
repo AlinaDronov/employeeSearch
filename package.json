@@ -1,0 +1,15 @@
+{
+  "name": "your-server-name",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "engines": {
+    "node": "16.20.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

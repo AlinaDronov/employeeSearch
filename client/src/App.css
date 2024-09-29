@@ -1,0 +1,16 @@
+.App {
+  position: relative;
+  height: 80vh;  
+  width: 80vw; 
+}
+
+.app-logo {
+  height: 80px;
+  position: fixed; 
+  top: 1px;
+  left: 15px;
+}
+
+.app-link {
+  color: #61dafb;
+}

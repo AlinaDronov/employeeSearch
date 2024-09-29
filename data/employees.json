@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "Bar Refaeli",
+      "workTitle": "Senior Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Eyal Golan",
+      "workTitle": "Programmer",
+      "imageUrl": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Maya Boskila",
+      "workTitle": "Designer",
+      "imageUrl": "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Maor Edri",
+      "workTitle": "Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Shlomi Hako Levi",
+      "workTitle": "Consultant",
+      "imageUrl": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Assi Azar",
+      "workTitle": "Designer",
+      "imageUrl": "https://randomuser.me/api/portraits/men/4.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Rotem Sela",
+      "workTitle": "Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/women/3.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Yael Cohen",
+      "workTitle": "Programmer",
+      "imageUrl": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Nadav Guetta",
+      "workTitle": "Senior Engineer",
+      "imageUrl": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Omer Adam",
+      "workTitle": "Product Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/6.jpg"
+    }
+  ]
+  
