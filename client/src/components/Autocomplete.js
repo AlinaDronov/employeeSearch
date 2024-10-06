@@ -6,6 +6,21 @@ const Autocomplete = ({ employees, setFilteredEmployees, searchPerformed, resetS
   const [suggestions, setSuggestions] = useState([]);
   const [highlightedIndex, setHighlightedIndex] = useState(-1); //tracks the highlighted suggestion index
   const suggestionRefs = useRef([]); 
+  const autocompleteRef = useRef(null); 
+
+  //handle focus event to show all employees if input is empty
+  const handleFocus = () => {
+    if (inputValue.length === 0) {
+      setSuggestions(employees);  
+    }
+  };
+
+  //handle blur event to close the suggestions if focus is lost
+  const handleBlur = (event) => {
+    if (autocompleteRef.current && !autocompleteRef.current.contains(event.relatedTarget)) {
+      setSuggestions([]);
+    }
+  };
 
   //function to handle employee selection (for both click and Enter key)
   const selectEmployee = (employee) => {
@@ -84,12 +99,13 @@ const Autocomplete = ({ employees, setFilteredEmployees, searchPerformed, resetS
   };
   
   return (
-    <div>
+    <div ref={autocompleteRef}>
       <input
         type="text"
         value={inputValue}
         onChange={handleInputChange}
-        onFocus={() => inputValue.length === 0 && setSuggestions(employees)} 
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         onKeyDown={handleKeyDown}  
         placeholder="Search employee..."
         className="autocomplete-input"
@@ -97,19 +113,19 @@ const Autocomplete = ({ employees, setFilteredEmployees, searchPerformed, resetS
       
       {/* Show suggestions only if search is not performed */}
       {!searchPerformed && suggestions.length > 0 && (
-        <ul className="autocomplete-suggestions">
-          {suggestions.map((employee, index) => (
-            <li
-              key={employee.name}
-              ref={(el) => (suggestionRefs.current[index] = el)}  //ref for each suggestion
-              className={`suggestion-item ${index === highlightedIndex ? 'highlighted' : ''}`}  //classes for styling
-              onClick={() => selectEmployee(employee)}
-            >
-              <img src={employee.imageUrl} alt={employee.name} className="employee-img" />
-              {highlightMatch(employee.name)} - {highlightMatch(employee.workTitle)}
-            </li>
-          ))}
-        </ul>
+      <ul className="autocomplete-suggestions">
+        {suggestions.map((employee, index) => (
+          <li
+            key={employee.name}
+            ref={(el) => (suggestionRefs.current[index] = el)}  // ref for each suggestion
+            className={`suggestion-item ${index === highlightedIndex ? 'highlighted' : ''}`}  // classes for styling
+            onMouseDown={() => selectEmployee(employee)}
+          >
+            <img src={employee.imageUrl} alt={employee.name} className="employee-img" />
+            {highlightMatch(employee.name)} - {highlightMatch(employee.workTitle)}
+          </li>
+        ))}
+      </ul>
       )}
     </div>
   );
