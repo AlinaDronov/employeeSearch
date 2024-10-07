@@ -3,7 +3,7 @@ import Autocomplete from "./Autocomplete";
 import './EmployeeSearch.css';  
 
 const EmployeeSearch = () => {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState([]); //holds all employees
   const [filteredEmployees, setFilteredEmployees] = useState([]); //holds filtered employees
   const [searchPerformed, setSearchPerformed] = useState(false); //tracks if the search button was pressed
   const [isSearchDisabled, setIsSearchDisabled] = useState(true); //disable search button if input is empty
@@ -17,9 +17,9 @@ const EmployeeSearch = () => {
       .catch((error) => console.error("Error fetching employee data:", error));
   }, []);
 
+  //handle search button click
   const handleSearch = () => {
     setSearchPerformed(true); 
-
     //if no filtered employees are found, show the full employee list
     if (filteredEmployees.length === 0) {
       setFilteredEmployees(employees);  

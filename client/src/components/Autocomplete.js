@@ -120,6 +120,7 @@ const Autocomplete = ({ employees, setFilteredEmployees, searchPerformed, resetS
             ref={(el) => (suggestionRefs.current[index] = el)}  // ref for each suggestion
             className={`suggestion-item ${index === highlightedIndex ? 'highlighted' : ''}`}  // classes for styling
             onMouseDown={() => selectEmployee(employee)}
+            onMouseEnter={() => setHighlightedIndex(index)}
           >
             <img src={employee.imageUrl} alt={employee.name} className="employee-img" />
             {highlightMatch(employee.name)} - {highlightMatch(employee.workTitle)}

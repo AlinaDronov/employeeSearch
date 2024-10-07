@@ -30,12 +30,12 @@
   white-space: pre-wrap;  
 }
 
-.highlighted {
-  background-color: #e0f7fa;  
+.suggestion-item:hover {
+  background-color: transparent; 
 }
 
-.suggestion-item:hover {
-  background-color: #f0f0f0;
+.suggestion-item.highlighted {
+  background-color: #e0f7fa;  
 }
 
 .employee-img {
